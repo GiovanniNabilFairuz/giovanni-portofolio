@@ -1,0 +1,3 @@
+# Copy to .dev.vars for local `wrangler dev`. Never commit the real file.
+# Local-only: skips Cloudflare Access verification when set to 1.
+DEV_BYPASS_ACCESS=1

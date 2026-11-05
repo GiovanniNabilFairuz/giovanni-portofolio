@@ -1,0 +1,172 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: auto;
+  }
+
+  body {
+    @apply bg-bg text-ink font-sans antialiased;
+    background-image: linear-gradient(rgba(17, 17, 17, 0.06) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(17, 17, 17, 0.06) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+
+  :focus-visible {
+    @apply outline-none ring-2 ring-cyan ring-offset-2 ring-offset-bg;
+  }
+}
+
+@layer components {
+  .brut-card {
+    @apply border-2 border-line bg-white shadow-brut;
+  }
+
+  .brut-btn {
+    @apply inline-flex items-center gap-2 border-2 border-line bg-white px-5 py-3 font-bold shadow-brut
+      transition-transform duration-150 ease-out hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-brut-lg
+      active:translate-x-0 active:translate-y-0 active:shadow-none;
+  }
+
+  .sticker {
+    @apply inline-block border-2 border-line px-3 py-1 text-sm font-bold shadow-brut;
+  }
+}
+
+/* Custom Floating & Dynamic Neo-Brutalist Animations */
+@keyframes float-slow {
+  0%, 100% {
+    transform: translateY(0px) rotate(-2deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(0.5deg);
+  }
+}
+
+@keyframes float-gentle {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(1deg);
+  }
+}
+
+@keyframes float-reverse {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(8px) rotate(-1.5deg);
+  }
+}
+
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes sound-wave {
+  0%, 100% {
+    height: 6px;
+  }
+  50% {
+    height: 24px;
+  }
+}
+
+@keyframes blink {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+@keyframes page-enter {
+  0% {
+    opacity: 0;
+    transform: translateY(32px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes page-enter-home {
+  0% {
+    opacity: 0;
+    transform: translateY(44px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-page-enter {
+  animation: page-enter 0.75s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-page-enter-home {
+  animation: page-enter-home 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-float-slow {
+  animation: float-slow 5s ease-in-out infinite;
+}
+
+.animate-float-gentle {
+  animation: float-gentle 4s ease-in-out infinite;
+}
+
+.animate-float-reverse {
+  animation: float-reverse 4.5s ease-in-out infinite;
+}
+
+.animate-spin-slow {
+  animation: spin-slow 16s linear infinite;
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 28s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+.animate-blink {
+  animation: blink 1s step-start infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
