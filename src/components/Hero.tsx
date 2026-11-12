@@ -142,15 +142,7 @@ export default function Hero() {
 
   return (
     <section className="relative mx-auto grid max-w-6xl items-center gap-12 px-5 py-16 md:grid-cols-[1.4fr_1fr] md:py-24">
-      {/* Background Decorative Neo-brutalist Floating Doodles */}
-      <div className="pointer-events-none absolute -top-8 left-10 select-none text-2xl font-black text-yellow/70 animate-float-slow">
-        ✦
-      </div>
-      <div className="pointer-events-none absolute top-1/2 -left-6 select-none text-3xl font-mono text-pink/60 animate-float-reverse">
-        +
-      </div>
-
-      {/* Left Column: Interactive Wordmark & Floating Tech Tags */}
+      {/* Left Column */}
       <div className="space-y-6">
         <InteractiveHeroIntro
           wordmark={site.wordmark}
@@ -160,15 +152,12 @@ export default function Hero() {
           headline={site.headline}
         />
 
-        {/* Floating Interactive Skill Pills with Staggered Bobbing */}
+        {/* Skill Pills */}
         <div className="flex flex-wrap items-center gap-2.5 pt-1">
-          {skills.map((skill, index) => (
+          {skills.map((skill) => (
             <span
               key={skill.name}
-              style={{
-                animationDelay: `${index * 0.35}s`,
-              }}
-              className={`animate-float-gentle inline-flex items-center gap-2 border-2 border-line ${skill.bg} px-3.5 py-1.5 text-sm font-bold ${skill.textCol} shadow-brut transition-all duration-200 hover:-translate-y-2 hover:scale-105 hover:rotate-1 hover:shadow-brut-lg active:scale-95 cursor-default select-none`}
+              className={`inline-flex items-center gap-2 border-2 border-line ${skill.bg} px-3.5 py-1.5 text-sm font-bold ${skill.textCol} shadow-brut transition-all duration-150 hover:-translate-y-0.5 hover:shadow-brut-lg active:translate-y-0 active:shadow-none cursor-default select-none`}
             >
               {skill.icon}
               {skill.name}
@@ -180,7 +169,7 @@ export default function Hero() {
         <div className="flex flex-wrap items-center gap-3.5 pt-3">
           <Link
             to="/about"
-            className="brut-btn group bg-white transition-all duration-200 hover:-translate-y-1 hover:shadow-brut-lg"
+            className="brut-btn group bg-white"
           >
             <span>About Me</span>
             <span className="inline-block transition-transform duration-200 group-hover:translate-x-1.5">
@@ -190,7 +179,7 @@ export default function Hero() {
 
           <Link
             to="/projects"
-            className="brut-btn bg-yellow group transition-all duration-200 hover:-translate-y-1 hover:shadow-brut-lg"
+            className="brut-btn bg-yellow group"
           >
             <span>Explore Works</span>
             <span className="inline-block transition-transform duration-200 group-hover:rotate-12 group-hover:scale-125">
@@ -200,55 +189,29 @@ export default function Hero() {
 
           <Link
             to="/contact"
-            className="brut-btn bg-bg-2 hover:bg-cyan group transition-all duration-200 hover:-translate-y-1 hover:shadow-brut-lg"
+            className="brut-btn bg-bg-2 hover:bg-cyan group"
           >
             <span>Let's Connect</span>
-            <span className="inline-block transition-transform duration-200 group-hover:-translate-y-0.5">
+            <span className="inline-block transition-transform duration-200 group-hover:translate-x-0.5">
               ✉️
             </span>
           </Link>
         </div>
       </div>
 
-      {/* Right Column: Floating Polaroid Card with 3D Tilt & Floating Badges */}
+      {/* Right Column: Polaroid Card with 3D Tilt & Badges */}
       <div className="relative mx-auto w-full max-w-sm">
-        {/* Floating Ambient Doodles around the Photo */}
-        <div className="pointer-events-none absolute -top-10 -right-8 -z-10 animate-spin-slow select-none text-4xl font-black text-yellow opacity-80">
-          ✹
-        </div>
-        <div className="pointer-events-none absolute -bottom-10 -left-6 -z-10 animate-float-gentle select-none font-mono text-2xl font-bold text-cyan/70">
-          {"{...}"}
-        </div>
-
-        {/* Orbiting Floating Badge 1: Location (Top Right) */}
-        <div className="absolute -right-4 -top-6 z-30 animate-float">
-          <span className="sticker rotate-6 bg-pink text-white flex items-center gap-1.5 shadow-brut cursor-pointer transition-transform hover:scale-110 hover:rotate-12">
+        {/* Badge: Location (Top Right) */}
+        <div className="absolute -right-4 -top-5 z-30">
+          <span className="sticker rotate-3 bg-pink text-white flex items-center gap-1.5 shadow-brut cursor-pointer transition-transform hover:scale-105">
             <span>📍</span>
             <span>{site.location}</span>
           </span>
         </div>
 
-        {/* Orbiting Floating Badge 2: Creative Tech (Top Left) */}
-        <div className="absolute -left-6 top-6 z-30 animate-float-reverse">
-          <span className="sticker -rotate-6 bg-yellow text-ink flex items-center gap-1.5 shadow-brut cursor-pointer transition-transform hover:scale-110 hover:-rotate-12">
-            <span className="text-pink">⚡</span>
-            <span>Creative Tech</span>
-          </span>
-        </div>
 
 
-        {/* Orbiting Floating Badge 4: Motion Badge (Bottom Left) */}
-        <div
-          className="absolute -left-4 -bottom-4 z-30 animate-float"
-          style={{ animationDelay: "1.8s" }}
-        >
-          <span className="sticker -rotate-3 bg-cyan text-ink flex items-center gap-1.5 shadow-brut cursor-pointer transition-transform hover:scale-110">
-            <span>✦</span>
-            <span>60 FPS Motion</span>
-          </span>
-        </div>
-
-        {/* Main Floating Polaroid Card with 3D Tilt */}
+        {/* Main Polaroid Card with 3D Tilt */}
         <div
           onMouseMove={handlePhotoMouseMove}
           onMouseEnter={handlePhotoMouseEnter}
