@@ -273,7 +273,7 @@ export default function InteractiveHeroIntro({
           opacity: isHovered ? 1 : 0,
           transformOrigin: "center center",
           transition:
-            "transform 0.22s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.18s ease-out",
+            "transform 1s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.18s ease-out",
         }}
       >
         <div
@@ -307,7 +307,7 @@ export default function InteractiveHeroIntro({
           opacity: isHovered ? 1 : 0,
           transformOrigin: "center center",
           transition:
-            "transform 0.22s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.18s ease-out",
+            "transform 1s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.18s ease-out",
         }}
       >
         <span className="absolute -left-1.5 -top-1.5 h-3 w-3 border-2 border-line bg-ink" />
