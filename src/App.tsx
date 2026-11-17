@@ -5,7 +5,7 @@ import PageTransition from "./components/PageTransition";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Projects from "./pages/Projects";
-import MotionGraphics from "./pages/MotionGraphics";
+import Certificates from "./pages/Certificates";
 import Contact from "./pages/Contact";
 import Admin from "./pages/Admin";
 import NotFound from "./pages/NotFound";
@@ -33,7 +33,7 @@ export default function App() {
                   <Route path="/" element={<Home />} />
                   <Route path="/about" element={<About />} />
                   <Route path="/projects" element={<Projects />} />
-                  <Route path="/motion-graphics" element={<MotionGraphics />} />
+                  <Route path="/certificates" element={<Certificates />} />
                   <Route path="/contact" element={<Contact />} />
                   <Route path="*" element={<NotFound />} />
                 </Routes>

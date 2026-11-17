@@ -25,8 +25,8 @@ export default function FloatingFocusCards() {
                 <span>Let's Talk</span>
                 <span className="transition-transform duration-200 group-hover:scale-125">✉️</span>
               </Link>
-              <Link to="/motion-graphics" className="brut-btn bg-ink text-white hover:bg-pink">
-                <span>Motion Reel</span>
+              <Link to="/projects" className="brut-btn bg-ink text-white hover:bg-pink">
+                <span>See Projects</span>
                 <span>🎬</span>
               </Link>
             </div>
